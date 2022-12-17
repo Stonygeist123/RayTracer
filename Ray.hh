@@ -1,0 +1,19 @@
+#ifndef RAY_H
+#define RAY_H
+
+#include "Vec3.hh"
+
+class Ray {
+public:
+	Point3 orig;
+	Vec3 dir;
+	Ray() {}
+	Ray(const Point3& origin, const Vec3& direction) : orig(origin), dir(direction) {}
+
+	Point3 origin() const { return orig; }
+	Vec3 direction() const { return dir; }
+
+	Point3 at(float t) const { return orig + t * dir; }
+};
+
+#endif
